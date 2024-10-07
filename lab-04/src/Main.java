@@ -35,7 +35,7 @@ public class Main {
             System.out.println(i);
         }
 
-        //Завдання 5
+        //Завдання 6
         for (int i = 1; i <= 9; i++) {
             System.out.print(i + " ");
             if (i % 3 == 0) {
@@ -43,7 +43,7 @@ public class Main {
             }
         }
 
-        //Завдання 6
+        //Завдання 7
         int n = 5;
         for(int i = 0; i < 8; i++) {
 
@@ -56,24 +56,13 @@ public class Main {
         }
         System.out.println();
 
-        //Завдання 7
+        //Завдання 8
         int n2 = 11;
         for(int i = 5; i >= 1; i--) {
             for(int j = 1; j < i + 1; j++)
             {
                 System.out.print(n2 + " ");
                 n2++;
-            }
-            System.out.println();
-        }
-
-        //Завдання 8
-        int n3 = 11;
-        for(int i = 5; i >= 1; i--) {
-            for(int j = 1; j < i + 1; j++)
-            {
-                System.out.print(n3 + " ");
-                n3++;
             }
             System.out.println();
         }
