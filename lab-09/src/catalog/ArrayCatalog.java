@@ -40,14 +40,34 @@ public class ArrayCatalog implements Catalog {
         return list.toArray(result);
     }
 
-//    @Override
-//    public Media[] getByAuthor(String author) {
-//        //TODO
-//    }
+    @Override
+    public Media[] getByAuthor(String author) {
+                List<Media> list = new ArrayList<>();
+        for (Media m : mediaCollection) {
+            if (m == null) {
+                break;
+            }
+            if (m.getAuthor().equals(author)) {
+                list.add(m);
+            }
+        }
+        Media[] result = new Media[list.size()];
+        return list.toArray(result);
+    }
 
     @Override
     public Media[] getByYear(int year) {
-
+        List<Media> list = new ArrayList<>();
+        for (Media m : mediaCollection) {
+            if (m == null) {
+                break;
+            }
+            if (m.getYear() >= year) {
+                list.add(m);
+            }
+        }
+        Media[] result = new Media[list.size()];
+        return list.toArray(result);
     }
 
     @Override
@@ -67,7 +87,17 @@ public class ArrayCatalog implements Catalog {
 
     @Override
     public Media[] getByRating(double fromRating, double toRating) {
-
+        List<Media> list = new ArrayList<>();
+        for (Media m : mediaCollection) {
+            if (m == null) {
+                break;
+            }
+            if (m.getRating() >= fromRating && m.getRating() <= toRating) {
+                list.add(m);
+            }
+        }
+        Media[] result = new Media[list.size()];
+        return list.toArray(result);
     }
 
 
