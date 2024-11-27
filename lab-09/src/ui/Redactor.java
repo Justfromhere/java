@@ -3,6 +3,8 @@ package ui;
 import catalog.Catalog;
 import media.CompactDisc;
 import media.Media;
+import media.Tape;
+import media.VinilRecord;
 
 public class Redactor extends UserCommunicator {
     public Redactor(Catalog catalog) {
@@ -25,8 +27,23 @@ public class Redactor extends UserCommunicator {
         System.out.println("Введіть рейтинг:");
         double rating = scanner.nextDouble();
         scanner.nextLine();
-        Media media = new
-                CompactDisc(name,author,year,comment,rating);
-        catalog.addMedia(media);
+        System.out.println("Виберіть тип носія:");
+        System.out.println("1 - компакт диск");
+        System.out.println("2 - вінілова платівка");
+        System.out.println("3 - касета");
+        int type = scanner.nextInt();
+        scanner.nextLine();
+        Media media = null;
+        if (type == 1) {
+            media = new CompactDisc(name, author, year, comment, rating);
+        } else if (type == 2) {
+            media = new VinilRecord(name, author, year, comment, rating);
+        } else if (type == 3) {
+            media = new Tape(name, author, year, comment, rating);
+        }
+        if (media != null) {
+            catalog.addMedia(media);
+        }
+
     }
 }
