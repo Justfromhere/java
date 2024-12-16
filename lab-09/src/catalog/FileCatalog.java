@@ -75,7 +75,9 @@ public class FileCatalog extends CatalogAbstract{
                 if(mediaEnum.equals(MediaEnum.COMPACT_DISC)){
                     media = new
                             CompactDisc(name,author,year,comment,rating);
-                }else if(mediaEnum.equals(MediaEnum.VINYL_RECORD)){
+                } else if(mediaEnum.equals(MediaEnum.VINYL_RECORD)){
+                    media = new Tape(name,author,year,comment,rating);
+                } else if(mediaEnum.equals(MediaEnum.TAPE)){
                     media = new Tape(name,author,year,comment,rating);
                 }
                 if(media != null){
