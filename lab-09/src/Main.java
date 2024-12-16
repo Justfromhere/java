@@ -1,5 +1,6 @@
 import catalog.ArrayCatalog;
 import catalog.Catalog;
+import catalog.FileCatalog;
 import ui.Redactor;
 import ui.Searcher;
 import ui.UserCommunicator;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Catalog catalog = new ArrayCatalog();
+        Catalog catalog = new FileCatalog();
         UserCommunicator userCommunicator;
         String mainMenu = """
                 Виберіть режим:
